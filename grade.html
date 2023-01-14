@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade Calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		.table{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+<div class="container-fluid" style="width: 100%;height:100px;background-color:white">
+
+	<p  class="text-center font-weight-bold" style="font-size: 50px"> SGPA CALCULATOR</p>
+</div>
+<div class="table-responsive">
+	<center>
+	<table  id="tabl"class="table table-hover table-stripped  " style="width: 60%">
+       <tr>
+		<td scope="col">
+		Sno
+	</td>
+		<td scope="col">
+		Subject
+		</td>
+		<td scope="col">
+		Grade
+		</td>
+	</tr>
+	</table>
+</center>
+	<center>
+	<button type="button" class="btn btn-outline-primary" onclick="sood()">Calculate</button>
+<br><br>
+	<div id="ankush" style="font-size: 50px"></div>
+</center>
+</div>
+
+</body>
+<script type="text/javascript">
+	var table=document.getElementById("tabl");
+	var i,b,c,d,e,f,g; 
+	var x=1;
+	var j;
+	var subject=["DAA","CAO","AI","TOC","SE"," FRENCH","HPC"];
+	var optn=["Select Grade","A+","A","A-","B","B-","C","C-"];
+	for(i=1;i<=7;i++){
+	var tr=document.createElement("tr");
+	var td=document.createElement("td");
+	document.getElementById("tabl").appendChild(tr);
+	document.getElementById("tabl").appendChild(td);
+	td.innerHTML=x;
+	var td1=document.createElement("td");
+	document.getElementById("tabl").appendChild(td1);
+		td1.innerHTML=subject[i-1];
+	var td2=document.createElement("td");
+	document.getElementById("tabl").appendChild(td2);
+		var select=document.createElement("select");
+	td2.appendChild(select);
+		select.setAttribute("id",i);
+	for( j=0;j<=7;j++){
+		var option=document.createElement("option");
+	  select.appendChild(option);
+	  option.innerHTML=optn[j];
+	}
+		x++;
+	}
+var no=["0","10","10","9","8","7","6","5"];
+
+	
+ 
+function sood(){
+	var a=document.getElementById("1").value;
+	for(i=0;i<=7;i++){
+		if(a==optn[i]){
+			a=no[i];
+		}
+	}
+	var b=document.getElementById("2").value;
+	for(i=0;i<=7;i++){
+		if(b==optn[i]){
+			b=no[i];
+		}
+	}
+	var c=document.getElementById("3").value;
+	for(i=0;i<=7;i++){
+		if(c==optn[i]){
+			c=no[i];
+		}
+	}
+	var d=document.getElementById("4").value;
+	for(i=0;i<=7;i++){
+		if(d==optn[i]){
+			d=no[i];
+		}
+	}
+	var e=document.getElementById("5").value;
+	for(i=0;i<=7;i++){
+		if(e==optn[i]){
+			e=no[i];
+		}
+	}
+	var f=document.getElementById("6").value;
+	for(i=0;i<=7;i++){
+		if(f==optn[i]){
+			f=no[i];
+		}
+	}
+	var g=document.getElementById("7").value;
+	for(i=0;i<=7;i++){
+		if(g==optn[i]){
+			g=no[i];
+		}
+	}
+ var z= ((Number(a)*3)/10+(Number(b)*4.5)/10+(Number(c)*3)/10+(Number(d)*3)/10+(Number(e)*4.5)/10+(Number(f)*4.5)/10+(Number(g)*4.5)/10);
+
+var res=z/27;
+ console.log(a);
+  console.log(b);
+   console.log(c);
+    console.log(d);
+     console.log(e);
+      console.log(f);
+       console.log(g);
+       console.log(f);
+ document.getElementById("ankush").innerHTML=res*10;
+}
+
+</script>
+</html>
